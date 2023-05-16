@@ -11,6 +11,7 @@
 <script setup>
 import { ref } from "vue";
 import Menubar from 'primevue/menubar';
+import router from "@/router";
 
 const items = ref([
     {
@@ -25,10 +26,16 @@ const items = ref([
 
 function itemClick(event){
     if(event.target.innerHTML == "Projects" || event.target.className == "p-menuitem-icon pi pi-fw pi-file"){
-        console.log("We are in projects")
+        router.push({name: "Projects"})
+        //event.target.setAttribute('id','projects');
+       // const list = document.getElementById("projects").classList;
+        event.target.parentElement.classList.add("$style.clicked");
+        console.log(event.target.parentElement)
     }
     else{
-        console.log("We are in about me")
+        router.push({name: "AboutMe"})
+        event.target.setAttribute('id','aboutme');
+        console.log(event.target)
     }
 }
 
@@ -36,13 +43,24 @@ function itemClick(event){
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-    div{
-        margin-left: auto;
-        margin-right: auto;
-    }
 
     img:hover{
      opacity:0.6;
      background: #849898;  
+    }
+
+    .clicked{
+        background-color: green!important;
+    }
+
+    p-menuitem-content:hover{
+        background-color: green;
+        color: green;
+        background: red;
+        opacity: 0.6;
+    }
+
+    p-menuitem-active{
+        background-color: red;
     }
 </style>

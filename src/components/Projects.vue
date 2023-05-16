@@ -1,13 +1,13 @@
 <template>
     <Navbar/>
-    <p>About me</p>
+    <p>Projects</p>
 </template>
 
 <script>
 import Navbar from "./Navbar.vue"
 
 export default {
-    name: "Home",
+    name: "Projects",
     components: { Navbar }
 }
 
