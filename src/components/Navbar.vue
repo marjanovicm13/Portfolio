@@ -28,7 +28,7 @@ const items = reactive([
 ]);
 
 
-     if(router.currentRoute._value.path=="/AboutMe")
+     if(router.currentRoute._value.path=="/AboutMe" || router.currentRoute._value.path=="/")
      {
         items[0].class = "clicked"
         items[0].disabled = true
@@ -42,6 +42,9 @@ const items = reactive([
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+div{
+    background-color: antiquewhite;
+}
 
     img:hover{
      opacity:0.6;
