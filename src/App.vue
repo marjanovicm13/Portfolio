@@ -18,14 +18,13 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 760px;
-  padding: 10px;
   background-color: antiquewhite;
 }
-body{
-  background-color: grey;
-}
+
+.clicked{
+        color: #000;
+        font-weight: bold;
+        opacity: 1!important;
+    }
+
 </style>

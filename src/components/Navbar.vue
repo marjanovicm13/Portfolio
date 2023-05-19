@@ -1,6 +1,6 @@
 <template>
     <div class="card relative z-2">
-        <Menubar :model="items" @click="itemClick($event)">
+        <Menubar :model="items">
             <template #start>
                 <a href="https://github.com/marjanovicm13" target="_blank"><img alt="Github" title="Github account" src="../assets/githubLogo.jpg" height="40" class="mr-2" /></a>
             </template>
@@ -9,35 +9,34 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { reactive } from "vue";
 import Menubar from 'primevue/menubar';
 import router from "@/router";
 
-const items = ref([
+const items = reactive([
     {
         label: 'About me',
-        icon: 'pi pi-fw pi-user'
+        icon: 'pi pi-fw pi-user',
+        to: "AboutMe",
+        key: "aboutme"
     },
     {
         label: 'Projects',
-        icon: 'pi pi-fw pi-file'
+        icon: 'pi pi-fw pi-file',
+        to: "Projects"
     }
 ]);
 
-function itemClick(event){
-    if(event.target.innerHTML == "Projects" || event.target.className == "p-menuitem-icon pi pi-fw pi-file"){
-        router.push({name: "Projects"})
-        //event.target.setAttribute('id','projects');
-       // const list = document.getElementById("projects").classList;
-        event.target.parentElement.classList.add("$style.clicked");
-        console.log(event.target.parentElement)
-    }
-    else{
-        router.push({name: "AboutMe"})
-        event.target.setAttribute('id','aboutme');
-        console.log(event.target)
-    }
-}
+
+     if(router.currentRoute._value.path=="/AboutMe")
+     {
+        items[0].class = "clicked"
+        items[0].disabled = true
+     }
+     else{
+        items[1].class = "clicked"
+        items[1].disabled = true
+     }
 
 </script>
 
@@ -49,18 +48,4 @@ function itemClick(event){
      background: #849898;  
     }
 
-    .clicked{
-        background-color: green!important;
-    }
-
-    p-menuitem-content:hover{
-        background-color: green;
-        color: green;
-        background: red;
-        opacity: 0.6;
-    }
-
-    p-menuitem-active{
-        background-color: red;
-    }
 </style>
