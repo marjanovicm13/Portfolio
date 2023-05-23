@@ -1,7 +1,8 @@
 <template>
     <Navbar/>
-    <p style="font-size:30px">Projects</p>
-     <div class="flex-container">
+
+    <div class="container" style="margin-top:40px">
+     <div class="flex-container fade-in">
         <div> 
             <div class="card flex justify-content-center" id="gallery">
                 <Galleria :value="project1" :responsiveOptions="responsiveOptions" :numVisible="5" containerStyle="max-width: 640px"
@@ -21,7 +22,8 @@
         </div>
      </div> 
 
-      <div class="flex-container">
+    
+      <div class="flex-container fade-in">
         <div>
             Unit converter mobile app made for college assignment (Osnove razvoja web i mobilnih aplikacija) 
             <br><br>
@@ -41,7 +43,7 @@
         </div>
      </div> 
 
-     <div class="flex-container">
+     <div class="flex-container fade-in">
         <div> 
             <div class="card flex justify-content-center" id="gallery">
                 <Galleria :value="project3" :responsiveOptions="responsiveOptions" :numVisible="5" containerStyle="max-width: 640px"
@@ -61,7 +63,7 @@
         </div>
      </div> 
 
-     <div class="flex-container">
+     <div class="flex-container fade-in">
         <div>
             Image slider made for an assignment 
             <br><br>
@@ -81,7 +83,7 @@
         </div>
      </div> 
 
-     <div class="flex-container">
+     <div class="flex-container fade-in">
         <div> 
             <div class="card flex justify-content-center" id="gallery">
                 <Galleria :value="project5" :responsiveOptions="responsiveOptions" :numVisible="5" containerStyle="max-width: 640px"
@@ -101,7 +103,7 @@
         </div>
      </div> 
 
-     <div class="flex-container">
+     <div class="flex-container fade-in">
         <div>
             CRUD web app made for an internship while learning Blazor
             <br><br>
@@ -120,14 +122,18 @@
             </div>
         </div>
      </div> 
+     </div>
 </template>
 
 
 <script setup>
 import Navbar from "./Navbar.vue"
-import { ref, onMounted } from "vue";
+import { ref, onMounted, onUnmounted  } from "vue";
 import Galleria from 'primevue/galleria';
 import { PhotoService } from '@/service/PhotoService'
+
+var fadeInElements = []
+var fadeOutElements = []
 
 onMounted(() => {
     PhotoService.getImages(1).then((data) => (project1.value = data));
@@ -136,7 +142,49 @@ onMounted(() => {
     PhotoService.getImages(4).then((data) => (project4.value = data));
     PhotoService.getImages(5).then((data) => (project5.value = data));
     PhotoService.getImages(6).then((data) => (project6.value = data));
+
+    fadeInElements = Array.from(document.getElementsByClassName('fade-in'))
+    document.addEventListener('scroll', handleScroll)
+    handleScroll()
 });
+
+onUnmounted(() => {
+    document.removeEventListener('scroll', handleScroll)
+})
+
+const handleScroll = () => {
+      for (var i = 0; i < fadeInElements.length; i++) {
+        var elem = fadeInElements[i]
+        if (isElemVisible(elem)){
+            elem.style.opacity = '1'
+            elem.style.transform = 'scale(1)'
+            fadeInElements.splice(i, 1)
+            fadeOutElements.push(elem)
+        }
+      }
+      for(var j = 0; j < fadeOutElements.length; j++){
+        var el = fadeOutElements[j]
+        if(isElemNotVisible(el)){
+            el.style.opacity = '0'
+            fadeInElements.push(el)
+            fadeOutElements.splice(j, 1)
+        }
+      }
+}
+
+const isElemVisible = (el) =>{
+    var rect = el.getBoundingClientRect()
+    var elemTop = rect.top 
+    var elemBottom = rect.bottom
+    return (elemTop + 130< window.innerHeight && elemBottom >= 0)
+}
+
+const isElemNotVisible = (el) =>{
+    var rect = el.getBoundingClientRect()
+    var elemTop = rect.top - 200
+    var elemBottom = rect.bottom
+    return  (elemTop + 200 > window.innerHeight && elemBottom >= 0) || (elemTop< window.innerHeight && elemBottom <= 0) 
+}
 
 const project1 = ref();
 const project2 = ref();
@@ -170,6 +218,7 @@ const responsiveOptions = ref([
     }
     .flex-container {
         display: flex;
+          border-radius: 30px;
     }
 
     .flex-container > div {
@@ -177,4 +226,22 @@ const responsiveOptions = ref([
         padding: 20px;
         font-size: 20px;
     }
+ 
+    .container {
+    width: 80%;
+    min-width: 450px;
+    margin: 0 auto;
+   } 
+
+   .fade-in {
+    background-color: grey;
+    height: 500px;
+    margin-bottom: 50px;
+    opacity: 0;
+    transition: 0.7s all ease-out;
+    transform: scale(0.8);
+    box-sizing: border-box;
+    padding: 20px;
+  }
+
 </style>

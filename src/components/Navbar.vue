@@ -2,7 +2,7 @@
     <div class="card relative z-2">
         <Menubar :model="items">
             <template #start>
-                <a href="https://github.com/marjanovicm13" target="_blank"><img alt="Github" title="Github account" src="../assets/githubLogo.jpg" height="40" class="mr-2" /></a>
+                <a href="https://github.com/marjanovicm13" target="_blank"><img alt="Github" title="Github account" src="../assets/github.png" height="40" class="mr-2" /></a>
             </template>
         </Menubar>
     </div>
@@ -31,19 +31,20 @@ const items = reactive([
      if(router.currentRoute._value.path=="/AboutMe" || router.currentRoute._value.path=="/")
      {
         items[0].class = "clicked"
-        items[0].disabled = true
+        //items[0].disabled = true
      }
      else{
         items[1].class = "clicked"
-        items[1].disabled = true
+        //items[1].disabled = true
      }
 
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-div{
-    background-color: antiquewhite;
+.p-menubar{
+    display: flex;
+    justify-content: center;
 }
 
     img:hover{

@@ -18,11 +18,10 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  background-color: antiquewhite;
+  color: black;
 }
 
 .clicked{
-        color: #000;
         font-weight: bold;
         opacity: 1!important;
     }
