@@ -6,13 +6,13 @@
                 <Galleria :value="project1" :responsiveOptions="responsiveOptions" :numVisible="5" containerStyle="max-width: 640px"
                     :showThumbnails="false" :showIndicators="true">
                     <template #item="slotProps">
-                        <img :src="require(`@/assets/bayern/${slotProps.item.itemImageSrc}`)" :alt="slotProps.item.alt" style="width: 100%; display: block" />
+                         <Image :src="require(`@/assets/bayern/${slotProps.item.itemImageSrc}`)" :alt="slotProps.item.alt"  width="600" preview  />
                     </template>
                 </Galleria>
             </div>
         </div>
         <div>
-            Website made for college assignment (Osnove razvoja web i mobilnih aplikacija)
+            Website made for college assignment (Web and mobile application development basics)
             <br><br>
             Technologies used: HTML, CSS
             <br><br>
@@ -23,7 +23,7 @@
     
       <div class="flex-container fade-in">
         <div>
-            Unit converter mobile app made for college assignment (Osnove razvoja web i mobilnih aplikacija) 
+            Unit converter mobile app made for college assignment (Web and mobile application development basics) 
             <br><br>
             Technologies used: Java
             <br><br>
@@ -34,7 +34,14 @@
                 <Galleria :value="project2" :responsiveOptions="responsiveOptions" :numVisible="5" containerStyle="max-width: 640px"
                     :showThumbnails="false" :showIndicators="true">
                     <template #item="slotProps">
-                        <img :src="require(`@/assets/unitconverter/${slotProps.item.itemImageSrc}`)" :alt="slotProps.item.alt" style="width: 100%; height:400px; display: block" />
+                        <Image preview>
+                            <template #image>
+                                <img :src="require(`@/assets/unitconverter/${slotProps.item.itemImageSrc}`)" :alt="slotProps.item.alt" style="width: 100%; height:400px; display: block" />
+                            </template>
+                            <template #preview>
+                                <img :src="require(`@/assets/unitconverter/${slotProps.item.itemImageSrc}`)" alt="preview" style="width:15vw; height:80vh" />
+                            </template>
+                        </Image> 
                     </template>
                 </Galleria>
             </div>
@@ -47,7 +54,8 @@
                 <Galleria :value="project3" :responsiveOptions="responsiveOptions" :numVisible="5" containerStyle="max-width: 640px"
                     :showThumbnails="false" :showIndicators="true">
                     <template #item="slotProps">
-                        <img :src="require(`@/assets/hangman/${slotProps.item.itemImageSrc}`)" :alt="slotProps.item.alt" style="width: 100%; display: block" />
+                        <!-- <img :src="require(`@/assets/hangman/${slotProps.item.itemImageSrc}`)" :alt="slotProps.item.alt" style="width: 100%; display: block" /> -->
+                        <Image :src="require(`@/assets/hangman/${slotProps.item.itemImageSrc}`)" :alt="slotProps.item.alt"  width="600" preview  />
                     </template>
                 </Galleria>
             </div>
@@ -74,7 +82,35 @@
                 <Galleria :value="project4" :responsiveOptions="responsiveOptions" :numVisible="5" containerStyle="max-width: 640px"
                     :showThumbnails="false" :showIndicators="true">
                     <template #item="slotProps">
-                        <img :src="require(`@/assets/imageslider/${slotProps.item.itemImageSrc}`)" :alt="slotProps.item.alt" style="width: 100%; height:400px; display: block" />
+                        <!-- <img :src="require(`@/assets/imageslider/${slotProps.item.itemImageSrc}`)" :alt="slotProps.item.alt" style="width: 100%; height:400px; display: block" /> -->
+                        <Image :src="require(`@/assets/imageslider/${slotProps.item.itemImageSrc}`)" :alt="slotProps.item.alt"  width="600" preview  />
+                    </template>
+                </Galleria>
+            </div>
+        </div>
+     </div> 
+
+     <div class="flex-container fade-in">
+        <div>
+            Daily log (Diary/Notes) app made for a college assignment (Mobile application development) 
+            <br><br>
+            Technologies used: Kotlin
+            <br><br>
+            <a href="https://github.com/marjanovicm13/DailyLog23" target="_blank">Github link</a>
+        </div>
+        <div> 
+            <div class="card flex justify-content-center" id="gallery">
+                <Galleria :value="project7" :responsiveOptions="responsiveOptions" :numVisible="5" containerStyle="max-width: 640px"
+                    :showThumbnails="false" :showIndicators="true">
+                    <template #item="slotProps">
+                        <Image preview>
+                            <template #image>
+                                <img :src="require(`@/assets/dailylog/${slotProps.item.itemImageSrc}`)" :alt="slotProps.item.alt" style="width: 100%; height:400px; display: block" />
+                            </template>
+                            <template #preview>
+                                <img :src="require(`@/assets/dailylog/${slotProps.item.itemImageSrc}`)" alt="preview" style="width:15vw; height:80vh" />
+                            </template>
+                        </Image> 
                     </template>
                 </Galleria>
             </div>
@@ -87,7 +123,7 @@
                 <Galleria :value="project5" :responsiveOptions="responsiveOptions" :numVisible="5" containerStyle="max-width: 640px"
                     :showThumbnails="false" :showIndicators="true">
                     <template #item="slotProps">
-                        <img :src="require(`@/assets/HammerAngular/${slotProps.item.itemImageSrc}`)" :alt="slotProps.item.alt" style="width: 100%; display: block" />
+                        <Image :src="require(`@/assets/HammerAngular/${slotProps.item.itemImageSrc}`)" :alt="slotProps.item.alt"  width="600" preview  />
                     </template>
                 </Galleria>
             </div>
@@ -95,7 +131,7 @@
         <div>
             CRUD web app made for an internship while learning Angular
             <br><br>
-            Technologies used: HTML, CSS, Angular, .NET
+            Technologies used: HTML, CSS, Angular, .NET, MySQL
             <br><br>
             <a href="https://github.com/marjanovicm13/HammerProject" target="_blank">Github link</a>
         </div>
@@ -105,7 +141,7 @@
         <div>
             CRUD web app made for an internship while learning Blazor
             <br><br>
-            Technologies used: HTML, CSS, Javascript, Blazor
+            Technologies used: HTML, CSS, Javascript, Blazor, MySQL
             <br><br>
             <a href="https://github.com/marjanovicm13/HammerProject-in-Blazor" target="_blank">Github link</a>
         </div>
@@ -114,7 +150,7 @@
                 <Galleria :value="project6" :responsiveOptions="responsiveOptions" :numVisible="5" containerStyle="max-width: 640px"
                     :showThumbnails="false" :showIndicators="true">
                     <template #item="slotProps">
-                        <img :src="require(`@/assets/HammerBlazor/${slotProps.item.itemImageSrc}`)" :alt="slotProps.item.alt" style="width: 100%; height:400px; display: block" />
+                        <Image :src="require(`@/assets/HammerBlazor/${slotProps.item.itemImageSrc}`)" :alt="slotProps.item.alt"  width="600" preview  />
                     </template>
                 </Galleria>
             </div>
@@ -128,6 +164,7 @@
 import { ref, onMounted, onUnmounted  } from "vue";
 import Galleria from 'primevue/galleria';
 import { PhotoService } from '@/service/PhotoService'
+import Image from 'primevue/image';
 
 var fadeInElements = []
 var fadeOutElements = []
@@ -139,6 +176,7 @@ onMounted(() => {
     PhotoService.getImages(4).then((data) => (project4.value = data));
     PhotoService.getImages(5).then((data) => (project5.value = data));
     PhotoService.getImages(6).then((data) => (project6.value = data));
+    PhotoService.getImages(7).then((data) => (project7.value = data));
 
     fadeInElements = Array.from(document.getElementsByClassName('fade-in'))
     document.addEventListener('scroll', handleScroll)
@@ -189,6 +227,7 @@ const project3 = ref();
 const project4 = ref();
 const project5 = ref();
 const project6 = ref();
+const project7 = ref();
 
 const responsiveOptions = ref([
     {

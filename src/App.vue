@@ -20,9 +20,19 @@ import Main from "./components/Main.vue"
         opacity: 1;
     }
 
-  .p-datatable-wrapper{
+.p-datatable-wrapper{
         margin-top:20px;
         border-radius: 30px;
     }
+
+.p-image-preview{
+    width: 80vw;
+    height: 80vh;
+  }
+
+  .mobileApp{
+    width: 15vw;
+    height: 80vh;
+  }
 
 </style>

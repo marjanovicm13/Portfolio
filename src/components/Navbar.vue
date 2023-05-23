@@ -1,3 +1,4 @@
+// Not used
 <template>
     <div class="card relative z-2">
         <Menubar :model="items">
@@ -31,11 +32,9 @@ const items = reactive([
      if(router.currentRoute._value.path=="/AboutMe" || router.currentRoute._value.path=="/")
      {
         items[0].class = "clicked"
-        //items[0].disabled = true
      }
      else{
         items[1].class = "clicked"
-        //items[1].disabled = true
      }
 
 </script>

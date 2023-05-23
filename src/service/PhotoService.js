@@ -75,13 +75,13 @@ export const PhotoService = {
         return [
             {
                 itemImageSrc: "main.png",
-                alt: 'Description for Image 1',
-                title: 'Title 1'
+                alt: 'Description for Image',
+                title: 'Title'
             },
             {
                 itemImageSrc: "slider.gif",
-                alt: 'Description for Image 2',
-                title: 'Title 2'
+                alt: 'Description for Image',
+                title: 'Title'
             }
         ];
     }
@@ -90,18 +90,18 @@ export const PhotoService = {
         return [
             {
                 itemImageSrc: "main.png",
-                alt: 'Description for Image 1',
-                title: 'Title 1'
+                alt: 'Description for Image',
+                title: 'Title'
             },
             {
                 itemImageSrc: "queries.png",
-                alt: 'Description for Image 2',
-                title: 'Title 2'
+                alt: 'Description for Image',
+                title: 'Title'
             },
             {
                 itemImageSrc: "login.png",
-                alt: 'Description for Image 2',
-                title: 'Title 2'
+                alt: 'Description for Image',
+                title: 'Title '
             }
         ];
     }
@@ -110,38 +110,83 @@ export const PhotoService = {
         return [
             {
                 itemImageSrc: "main.png",
-                alt: 'Description for Image 1',
-                title: 'Title 1'
+                alt: 'Description for Image',
+                title: 'Title'
             },
             {
                 itemImageSrc: "queries.png",
-                alt: 'Description for Image 2',
-                title: 'Title 2'
+                alt: 'Description for Image',
+                title: 'Title'
             },
             {
                 itemImageSrc: "login.png",
-                alt: 'Description for Image 2',
-                title: 'Title 2'
+                alt: 'Description for Image',
+                title: 'Title'
             },
             {
                 itemImageSrc: "register.png",
-                alt: 'Description for Image 2',
-                title: 'Title 2'
+                alt: 'Description for Image',
+                title: 'Title'
             },
             {
                 itemImageSrc: "loggedinmain.png",
-                alt: 'Description for Image 2',
-                title: 'Title 2'
+                alt: 'Description for Image',
+                title: 'Title'
             },
             {
                 itemImageSrc: "update.png",
-                alt: 'Description for Image 2',
-                title: 'Title 2'
+                alt: 'Description for Image',
+                title: 'Title'
             },
             {
                 itemImageSrc: "choosedepartment.png",
-                alt: 'Description for Image 2',
-                title: 'Title 2'
+                alt: 'Description for Image',
+                title: 'Title'
+            }
+        ];
+    }
+    else if(project == 7)
+    {
+        return [
+            {
+                itemImageSrc: "dan.jpg",
+                alt: 'Description for Image',
+                title: 'Title'
+            },
+            {
+                itemImageSrc: "goals.jpg",
+                alt: 'Description for Image',
+                title: 'Title'
+            },
+            {
+                itemImageSrc: "calendar.jpg",
+                alt: 'Description for Image',
+                title: 'Title'
+            },
+            {
+                itemImageSrc: "settings.jpg",
+                alt: 'Description for Image',
+                title: 'Title'
+            },
+            {
+                itemImageSrc: "dodavanjeLoga.jpg",
+                alt: 'Description for Image',
+                title: 'Title'
+            },
+            {
+                itemImageSrc: "dodanLog.jpg",
+                alt: 'Description for Image',
+                title: 'Title'
+            },
+            {
+                itemImageSrc: "dodavanjeGoalaNotif.jpg",
+                alt: 'Description for Image',
+                title: 'Title'
+            },
+            {
+                itemImageSrc: "dodanGoal.jpg",
+                alt: 'Description for Image',
+                title: 'Title'
             }
         ];
     }

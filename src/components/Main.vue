@@ -1,7 +1,7 @@
 <template>
-    <div class="card" v-if="showAboutMe == true || showProjects == true">
-        <Button style="margin-top:10px" label="MAIN" severity="help" text raised @click="showAboutMe = false; showProjects = false; container[0].style.display = 'flex'"/>
-    </div>
+    <Transition >
+        <Button v-if="showAboutMe == true || showProjects == true" style="margin-top:10px" label="MAIN" severity="help" text raised @click="showAboutMe = false; showProjects = false; container[0].style.display = 'flex'"/>
+    </Transition>
 
     <Transition>
         <p v-if="showAboutMe==true"><Home/></p>
@@ -12,8 +12,11 @@
     </Transition>
 
    <div class="maincontainer">
-        <p>
+        <p class="txt">
             Mihael Marjanović
+        </p>
+        <p class="txt">
+            marjanovicm314@gmail.com
         </p>
         <p>
             <a href="https://github.com/marjanovicm13" target="_blank"><img id="github" alt="Github" title="Github account" src="../assets/github.png" height="40" class="mr-2" /></a>
@@ -25,7 +28,7 @@
             <Button label="Projects" severity="help" text raised @click="showProjects = !showProjects; container[0].style.display = 'none'" />
         </p>
    </div>
-
+    <p class="txt">This portfolio was made with Vue.js</p>
 </template>
 
 
@@ -74,5 +77,9 @@ var showProjects = ref(false);
 
 .maincontainer > p{
     margin-top: -5px;
+}
+
+.txt{
+    color: #CE93D8;
 }
 </style>
