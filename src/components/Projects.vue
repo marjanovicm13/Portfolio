@@ -1,6 +1,4 @@
 <template>
-    <Navbar/>
-
     <div class="container" style="margin-top:40px">
      <div class="flex-container fade-in">
         <div> 
@@ -127,7 +125,6 @@
 
 
 <script setup>
-import Navbar from "./Navbar.vue"
 import { ref, onMounted, onUnmounted  } from "vue";
 import Galleria from 'primevue/galleria';
 import { PhotoService } from '@/service/PhotoService'
@@ -234,7 +231,8 @@ const responsiveOptions = ref([
    } 
 
    .fade-in {
-    background-color: grey;
+    background-color: #1f2d40;
+    color: antiquewhite;
     height: 500px;
     margin-bottom: 50px;
     opacity: 0;

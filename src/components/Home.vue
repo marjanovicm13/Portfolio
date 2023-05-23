@@ -1,42 +1,70 @@
 <template>
-    <Navbar/>
-    <div class="container" style="margin-top:40px; ">
+    <div class="container" style="margin-top:20px; ">
             <strong style="font-size:25px;">Education: </strong>
 
+             <div class="flex" style="margin-top:20px">
+                <div>
+                    <img src="../assets/etes.png" alt="" height="100px" width="100px">
+                </div>
                 
-            <Splitter style="height: 150px" class="mb-5">
-                <SplitterPanel class="flex align-items-center justify-content-center" :size="25" :minSize="10"> 
-                        <img src="../assets/ferit.png" alt="">
-                    </SplitterPanel>
-                <SplitterPanel class="flex align-items-center justify-content-center" :size="75">
-                     2014-2018 <br>
-                        Elektrotehnička i ekonomska škola Nova Gradiška / Electric engineering and economic school Nova Gradiška <br>
-                        Tehničar za računalstvo / Computer technician 
-                </SplitterPanel>
-            </Splitter>
+                <div>
+                    2014-2018 <br>
+                    Elektrotehnička i ekonomska škola Nova Gradiška / Electric engineering and economic school Nova Gradiška <br>
+                    Tehničar za računalstvo / Computer technician 
+                </div>
+            </div>
             
 
-            <div class="edu">
-                2018-2021 <br>
-                Fakultet elektrotehnike, računarstva i informacijskih tehnologija Osijek / Faculty of Electrical Engineering, Computer Science and Information Technology Osijek <br>
-                univ. bacc. ing. comp.
+            <div class="flex">
+                <div>
+                    <img src="../assets/ferit.png" alt="" height="100px" width="100px">
+                </div>
+
+                <div>
+                    2018-2021 <br>
+                    Fakultet elektrotehnike, računarstva i informacijskih tehnologija Osijek / Faculty of Electrical Engineering, Computer Science and Information Technology Osijek <br>
+                    univ. bacc. ing. comp.
+                </div>
             </div>
 
-             <div class="edu">
-                2021- <br>
-                Fakultet elektrotehnike, računarstva i informacijskih tehnologija Osijek / Faculty of Electrical Engineering, Computer Science and Information Technology Osijek <br>
-                mag. ing .comp
+             <div class="flex">
+                <div>
+                    <img src="../assets/ferit.png" alt="" height="100px" width="100px">
+                </div>
+                <div>
+                    2021- <br>
+                    Fakultet elektrotehnike, računarstva i informacijskih tehnologija Osijek / Faculty of Electrical Engineering, Computer Science and Information Technology Osijek <br>
+                    mag. ing .comp
+                </div>
             </div>
 
+        <strong style="font-size:25px;">Language skills: </strong>
+        <div class="card">
+            <DataTable :value="languages"  tableStyle="min-width: 50rem">
+                <Column field="language" header="Language"></Column>
+                <Column field="listening" header="Listening"></Column>
+                <Column field="reading" header="Reading"></Column>
+                <Column field="spokenProduction" header="Spoken Production"></Column>
+                <Column field="spokenInteraction" header="Spoken Interaction"></Column>
+                <Column field="writing" header="Writing"></Column>
+            </DataTable>
+        </div>
      </div>
+
 </template>
 
 
 <script setup>
-import Navbar from "./Navbar.vue"
-import Splitter from 'primevue/splitter';
-import SplitterPanel from 'primevue/splitterpanel';
+import { LanguageService } from '@/service/LanguageService';
+import { onMounted, ref } from "vue";
+import DataTable from "primevue/datatable";
+import Column from 'primevue/column';
 
+onMounted(() => {
+    LanguageService.getLanguageSkills().then((data) => (languages.value = data));
+});
+
+const languages = ref();
 
 </script>
 
@@ -50,15 +78,23 @@ import SplitterPanel from 'primevue/splitterpanel';
     margin: 0 auto;
    } 
 
-.edu {
-    background-color: grey;
+.flex {
+    background-color: #1f2d40;
+    color: antiquewhite;
     margin-bottom: 20px;
     box-sizing: border-box;
     padding: 20px;
     border-radius: 30px;
     font-size: 18px;
+    display: flex;
   }
+
+   .flex > div {
+        margin: auto;
+        padding: 20px;
+        font-size: 20px;
+    }
+
+
  
-
-
 </style>

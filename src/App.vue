@@ -1,29 +1,28 @@
 <template>
-  <router-view/>
+  <Main/>
 </template>
 
-<script>
-
-export default {
-  name: 'App',
-  components: {
-    
-  }
-}
+<script setup>
+import Main from "./components/Main.vue"
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: arial, verdana, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: black;
+  color: antiquewhite;
 }
 
 .clicked{
         font-weight: bold;
-        opacity: 1!important;
+        opacity: 1;
+    }
+
+  .p-datatable-wrapper{
+        margin-top:20px;
+        border-radius: 30px;
     }
 
 </style>
