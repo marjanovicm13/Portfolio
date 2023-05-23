@@ -1,3 +1,5 @@
+Firebase link: https://portfolio-7b002.web.app/
+
 # portfolio
 
 ## Project setup
