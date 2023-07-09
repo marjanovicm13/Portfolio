@@ -82,7 +82,6 @@
                 <Galleria :value="project4" :responsiveOptions="responsiveOptions" :numVisible="5" containerStyle="max-width: 640px"
                     :showThumbnails="false" :showIndicators="true">
                     <template #item="slotProps">
-                        <!-- <img :src="require(`@/assets/imageslider/${slotProps.item.itemImageSrc}`)" :alt="slotProps.item.alt" style="width: 100%; height:400px; display: block" /> -->
                         <Image :src="require(`@/assets/imageslider/${slotProps.item.itemImageSrc}`)" :alt="slotProps.item.alt"  width="600" preview  />
                     </template>
                 </Galleria>
@@ -91,13 +90,6 @@
      </div> 
 
      <div class="flex-container fade-in">
-        <div>
-            Daily log (Diary/Notes) app made for a college assignment (Mobile application development) 
-            <br><br>
-            Technologies used: Kotlin
-            <br><br>
-            <a href="https://github.com/marjanovicm13/DailyLog23" target="_blank">Github link</a>
-        </div>
         <div> 
             <div class="card flex justify-content-center" id="gallery">
                 <Galleria :value="project7" :responsiveOptions="responsiveOptions" :numVisible="5" containerStyle="max-width: 640px"
@@ -115,9 +107,23 @@
                 </Galleria>
             </div>
         </div>
+        <div>
+            Daily log (Diary/Notes) app made for a college assignment (Mobile application development) 
+            <br><br>
+            Technologies used: Kotlin
+            <br><br>
+            <a href="https://github.com/marjanovicm13/DailyLog23" target="_blank">Github link</a>
+        </div>
      </div> 
 
      <div class="flex-container fade-in">
+        <div>
+            CRUD web app made during an internship while learning Angular
+            <br><br>
+            Technologies used: HTML, CSS, Angular, ASP.NET Core, MySQL
+            <br><br>
+            <a href="https://github.com/marjanovicm13/HammerProject" target="_blank">Github link</a>
+        </div>
         <div> 
             <div class="card flex justify-content-center" id="gallery">
                 <Galleria :value="project5" :responsiveOptions="responsiveOptions" :numVisible="5" containerStyle="max-width: 640px"
@@ -128,29 +134,42 @@
                 </Galleria>
             </div>
         </div>
-        <div>
-            CRUD web app made for an internship while learning Angular
-            <br><br>
-            Technologies used: HTML, CSS, Angular, .NET, MySQL
-            <br><br>
-            <a href="https://github.com/marjanovicm13/HammerProject" target="_blank">Github link</a>
-        </div>
      </div> 
 
      <div class="flex-container fade-in">
-        <div>
-            CRUD web app made for an internship while learning Blazor
-            <br><br>
-            Technologies used: HTML, CSS, Javascript, Blazor, MySQL
-            <br><br>
-            <a href="https://github.com/marjanovicm13/HammerProject-in-Blazor" target="_blank">Github link</a>
-        </div>
         <div> 
             <div class="card flex justify-content-center" id="gallery">
                 <Galleria :value="project6" :responsiveOptions="responsiveOptions" :numVisible="5" containerStyle="max-width: 640px"
                     :showThumbnails="false" :showIndicators="true">
                     <template #item="slotProps">
                         <Image :src="require(`@/assets/HammerBlazor/${slotProps.item.itemImageSrc}`)" :alt="slotProps.item.alt"  width="600" preview  />
+                    </template>
+                </Galleria>
+            </div>
+        </div>
+        <div>
+            CRUD web app made during an internship while learning Blazor
+            <br><br>
+            Technologies used: HTML, CSS, Javascript, Blazor, ASP.NET Core, MySQL
+            <br><br>
+            <a href="https://github.com/marjanovicm13/HammerProject-in-Blazor" target="_blank">Github link</a>
+        </div>
+     </div> 
+
+     <div class="flex-container fade-in">
+        <div>
+            Excercise assignment when applying for an internship. 
+            <br><br>
+            Technologies used: HTML, CSS, Angular, Spring Boot, PostgreSQL
+            <br><br>
+            <a target="_blank">Github link: Private Repository</a>
+        </div>
+        <div> 
+            <div class="card flex justify-content-center" id="gallery">
+                <Galleria :value="project8" :responsiveOptions="responsiveOptions" :numVisible="5" containerStyle="max-width: 640px"
+                    :showThumbnails="false" :showIndicators="true">
+                    <template #item="slotProps">
+                        <Image :src="require(`@/assets/pancakes/${slotProps.item.itemImageSrc}`)" :alt="slotProps.item.alt"  width="600" preview  />
                     </template>
                 </Galleria>
             </div>
@@ -177,6 +196,7 @@ onMounted(() => {
     PhotoService.getImages(5).then((data) => (project5.value = data));
     PhotoService.getImages(6).then((data) => (project6.value = data));
     PhotoService.getImages(7).then((data) => (project7.value = data));
+    PhotoService.getImages(8).then((data) => (project8.value = data));
 
     fadeInElements = Array.from(document.getElementsByClassName('fade-in'))
     document.addEventListener('scroll', handleScroll)
@@ -228,6 +248,7 @@ const project4 = ref();
 const project5 = ref();
 const project6 = ref();
 const project7 = ref();
+const project8 = ref();
 
 const responsiveOptions = ref([
     {

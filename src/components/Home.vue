@@ -1,5 +1,5 @@
 <template>
-    <div class="container" style="margin-top:20px; ">
+    <div class="container" style="margin-top:60px; ">
             <strong style="font-size:25px;">Education: </strong>
 
              <div class="flex" style="margin-top:20px">

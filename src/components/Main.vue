@@ -1,10 +1,13 @@
 <template>
     <Transition >
-        <Button v-if="showAboutMe == true || showProjects == true" style="margin-top:10px" label="MAIN" severity="help" text raised @click="showAboutMe = false; showProjects = false; container[0].style.display = 'flex'"/>
+            <Button id="projectsMenuButton"  v-if="showProjects == true" label="MAIN" severity="help" text raised @click="showAboutMe = false; showProjects = false; container[0].style.display = 'flex'"/>
+    </Transition>
+     <Transition >
+            <Button id="aboutMenuButton"  v-if="showAboutMe == true" label="MAIN" severity="help" text raised @click="showAboutMe = false; showProjects = false; container[0].style.display = 'flex'"/>
     </Transition>
 
     <Transition>
-        <p v-if="showAboutMe==true"><Home/></p>
+        <div v-if="showAboutMe==true"><Home/></div>
     </Transition>
 
     <Transition>
@@ -51,6 +54,22 @@ var showProjects = ref(false);
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+ #projectsMenuButton{
+    position: fixed;
+    z-index: 1;
+    background-color: darkslategrey;
+    margin-top: -25px;
+     margin-left: -25px
+ }
+
+  #aboutMenuButton{
+    position: fixed;
+    z-index: 1;
+    background-color: darkslategrey;
+    margin-top: -45px;
+    margin-left: -35px
+ }
+
  .maincontainer{
     display: flex;
     justify-content: center;

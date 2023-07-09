@@ -190,6 +190,46 @@ export const PhotoService = {
             }
         ];
     }
+    else if(project == 8)
+    {
+        return [
+            {
+                itemImageSrc: "guest.png",
+                alt: 'Description for Image',
+                title: 'Title'
+            },
+            {
+                itemImageSrc: "login.png",
+                alt: 'Description for Image',
+                title: 'Title'
+            },
+            {
+                itemImageSrc: "customer.png",
+                alt: 'Description for Image',
+                title: 'Title'
+            },
+            {
+                itemImageSrc: "discount.png",
+                alt: 'Description for Image',
+                title: 'Title'
+            },
+            {
+                itemImageSrc: "orders.png",
+                alt: 'Description for Image',
+                title: 'Title'
+            },
+            {
+                itemImageSrc: "detailorder.png",
+                alt: 'Description for Image',
+                title: 'Title'
+            },
+            {
+                itemImageSrc: "ingredients.png",
+                alt: 'Description for Image',
+                title: 'Title'
+            }
+        ];
+    }
 },
 
     getImages(project) {
